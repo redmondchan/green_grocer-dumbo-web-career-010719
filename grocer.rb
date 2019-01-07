@@ -36,7 +36,8 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-  new_cart = cart.each do |name, hash|
+  new_cart = cart
+  cart.each do |name, hash|
     if hash[:clearance]
       new_cart[name][:price] = (cart[name][:price]*0.8).round(2)
     end
